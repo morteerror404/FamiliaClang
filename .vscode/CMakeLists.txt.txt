@@ -1,0 +1,39 @@
+# Define a versão mínima do CMake que você precisa. 
+# 3.20 é um bom ponto de partida para recursos modernos.
+cmake_minimum_required(VERSION 3.20)
+
+# Define o nome do seu projeto. SUBSTITUA 'MeuProjetoCPlusPlus' pelo nome do seu projeto.
+project(MeuProjetoCPlusPlus LANGUAGES CXX)
+
+# Define o padrão C++ a ser usado. C++17 ou C++20 são amplamente usados.
+# O 'REQUIRED' garante que o compilador suporte esta versão.
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Opcional, mas recomendado: Define onde os executáveis (arquivos .exe) devem ser colocados.
+# Isso organiza o seu diretório de build.
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+
+# ----------------------------------------------------------------------------------
+# CONFIGURAÇÃO DE EXECUTÁVEIS
+# ----------------------------------------------------------------------------------
+
+# Cria um executável. 
+# O nome do executável será 'meu_programa'.
+# LISTE AQUI TODOS OS SEUS ARQUIVOS .cpp
+add_executable(
+    meu_programa          # <-- Nome do executável final (o .exe)
+    main.cpp              # <-- Seu arquivo principal
+    # OutrosArquivos.cpp  # <-- Se tiver mais arquivos, liste-os aqui
+)
+
+# Opcional, mas útil: Adiciona as flags de compilação necessárias.
+# /W4 ou /Wall são boas flags para o MSVC (Visual Studio) que você está usando.
+if(MSVC)
+    target_compile_options(meu_programa PUBLIC /W4 /Zi)
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
+    target_compile_options(meu_programa PUBLIC -Wall -Wextra -Wpedantic -g)
+endif()
+
+# Opcional: Se você precisar incluir arquivos de cabeçalho de uma pasta 'include', adicione:
+# target_include_directories(meu_programa PUBLIC ${CMAKE_SOURCE_DIR}/include)
