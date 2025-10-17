@@ -89,7 +89,7 @@ int mult(int a, int b, int var){
         b = var;
         var = 0;
 
-    var = a / b;
+    var = a * b;
 
     printf("\n Total: %d", var );
     return 0;
