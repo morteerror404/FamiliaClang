@@ -10,14 +10,14 @@ int var;
 
 int soma(int a, int b, int var){
 
-    printf("Bora somar");
-    printf("Digite o um valor para A: ");
+    printf("Bora somar\n");
+    printf("\nDigite o um valor para A: ");
     scanf("%d", &var);
 
         a = var;
         var = 0;
     
-    printf("Digite o um valor para B: ");
+    printf("\nDigite o um valor para B: ");
     scanf("%d", &var);
 
         b = var;
@@ -25,21 +25,21 @@ int soma(int a, int b, int var){
 
     var = a + b;
 
-    printf("\n Total: %d", var );
+    printf("\nTotal:\n %d\n", var );
     return 0;
 
 }
 
 int sub(int a, int b, int var){
 
-    printf("Bora subtrair");
-    printf("Digite o um valor para A: ");
+    printf("\nBora subtrair\n");
+    printf("\nDigite o um valor para A: ");
     scanf("%d", &var);
 
         a = var;
         var = 0;
     
-    printf("Digite o um valor para B: ");
+    printf("\nDigite o um valor para B: ");
     scanf("%d", &var);
 
         b = var;
@@ -47,21 +47,21 @@ int sub(int a, int b, int var){
 
     var = a - b;
 
-    printf("\n Total: %d", var );
+    printf("\nTotal:\n %d", var );
     return 0;
 
 }
 
 int div(float a, float b, float var){
 
-    printf("Bora dividir");
-    printf("Digite o um valor float para A: ");
+    printf("\nBora dividir");
+    printf("\nDigite o um valor float para A: ");
     scanf("%f", &var);
 
         a = var;
         var = 0;
     
-    printf("Digite o um valor float para B: ");
+    printf("\nDigite o um valor float para B: ");
     scanf("%f", &var);
 
         b = var;
@@ -69,21 +69,21 @@ int div(float a, float b, float var){
 
     var = a / b;
 
-    printf("\n Total: %f", var );
+    printf("\nTotal:\n %f", var );
     return 0;
 
 }
 
 int mult(int a, int b, int var){
 
-    printf("Bora dividir");
-    printf("Digite o um valor para A: ");
+    printf("\nBora multiplicar");
+    printf("\nDigite o um valor para A: ");
     scanf("%d", &var);
 
         a = var;
         var = 0;
     
-    printf("Digite o um valor para B: ");
+    printf("\nDigite o um valor para B: ");
     scanf("%d", &var);
 
         b = var;
@@ -99,6 +99,9 @@ int mult(int a, int b, int var){
 
 int main(){
     soma(a, b, var);
+    sub(a, b, var);
+    div(a, b, var);
+    mult(a, b, var);
     return 0;
 
 }
